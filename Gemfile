@@ -19,6 +19,8 @@ gem 'sass-rails', '~> 4.0.2'
 
 gem 'bootstrap-sass'
 
+gem 'paperclip', github: 'thoughtbot/paperclip'
+
 gem 'devise'
 
 # Use Uglifier as compressor for JavaScript assets
