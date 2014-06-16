@@ -19,7 +19,10 @@ gem 'sass-rails', '~> 4.0.2'
 
 gem 'aws-sdk', '~> 1.20.0'
 
+gem 'will_paginate-bootstrap'
+
 gem 'bootstrap-sass'
+gem 'will_paginate', '~> 3.0.5'
 
 gem 'jquery-turbolinks'
 gem 'masonry-rails', '~> 0.2.0'
