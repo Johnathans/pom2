@@ -21,6 +21,9 @@ gem 'aws-sdk', '~> 1.20.0'
 
 gem 'bootstrap-sass'
 
+gem 'jquery-turbolinks'
+gem 'masonry-rails', '~> 0.2.0'
+
 gem 'paperclip', github: 'thoughtbot/paperclip'
 
 gem 'devise'
