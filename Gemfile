@@ -17,6 +17,8 @@ end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
+gem 'aws-sdk', '~> 1.20.0'
+
 gem 'bootstrap-sass'
 
 gem 'paperclip', github: 'thoughtbot/paperclip'
