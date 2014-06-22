@@ -5,6 +5,7 @@ Pom2::Application.routes.draw do
   get "about" => "pages#about"
   get "breeder_listing" => "pages#breeder_listing"
   get "pomsky_breeders" => "pages#pomsky_breeders"
+  get "pomsky_puppies_for_sale" => "pages#pomsky_puppies_for_sale"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

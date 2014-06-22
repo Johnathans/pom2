@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 
   def breeder_listing
   end
+
+  def pomsky_puppies_for_sale
+  end
 end
