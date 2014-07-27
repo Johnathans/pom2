@@ -1,0 +1,35 @@
+<h1>Listing husky_breeders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Website</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @husky_breeders.each do |husky_breeder| %>
+      <tr>
+        <td><%= husky_breeder.name %></td>
+        <td><%= husky_breeder.website %></td>
+        <td><%= husky_breeder.email %></td>
+        <td><%= husky_breeder.phone %></td>
+        <td><%= husky_breeder.description %></td>
+        <td><%= link_to 'Show', husky_breeder %></td>
+        <td><%= link_to 'Edit', edit_husky_breeder_path(husky_breeder) %></td>
+        <td><%= link_to 'Destroy', husky_breeder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Husky breeder', new_husky_breeder_path %>

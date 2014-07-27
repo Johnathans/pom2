@@ -1,4 +1,6 @@
 Pom2::Application.routes.draw do
+  resources :husky_breeders
+
   resources :pins
 
   devise_for :users

@@ -10,4 +10,10 @@ class PagesController < ApplicationController
 
   def pomsky_puppies_for_sale
   end
+
+  def husky_breeders
+  end
+
+  def pomeranian_breeders
+  end
 end

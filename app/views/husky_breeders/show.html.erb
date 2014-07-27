@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="jumbotron">
+    <ol class="breadcrumb">
+      <li><a href="www.thepomeranianhusky.com">Home</a></li>
+      <li><a href="www.thepomeranianhusky.com/husky_breeders">Husky Breeders</a></li>
+    </ol>
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Breeder Name:</strong>
+      <%= @husky_breeder.name %>
+    </p>
+    <%= image_tag @husky_breeder.image.url(:medium) %>
+    <p>
+      <strong>Website:</strong>
+      <%= @husky_breeder.website %>
+    </p>
+
+    <p>
+      <strong><span class="glyphicon glyphicon-envelope"></span>  Email:</strong>
+      <%= @husky_breeder.email %>
+    </p>
+
+    <p>
+      <strong><span class="glyphicon glyphicon-earphone"></span> Phone:</strong>
+      <%= @husky_breeder.phone %>
+    </p>
+
+    <p>
+      <strong>About the Breeder:</strong>
+      <%= @husky_breeder.description %>
+    </p>
+
+    <%= link_to 'Edit', edit_husky_breeder_path(@husky_breeder) %> |
+    <%= link_to 'Back', husky_breeders_path %>
+  </div>
+</div>
