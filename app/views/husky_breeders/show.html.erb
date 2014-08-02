@@ -11,27 +11,23 @@
       <%= @husky_breeder.name %>
     </p>
     <%= image_tag @husky_breeder.image.url(:medium) %>
-    <p>
-      <strong>Website:</strong>
-      <%= @husky_breeder.website %>
-    </p>
-
-    <p>
-      <strong><span class="glyphicon glyphicon-envelope"></span>  Email:</strong>
-      <%= @husky_breeder.email %>
-    </p>
-
-    <p>
-      <strong><span class="glyphicon glyphicon-earphone"></span> Phone:</strong>
-      <%= @husky_breeder.phone %>
-    </p>
-
-    <p>
+    <address>
       <strong>About the Breeder:</strong>
       <%= @husky_breeder.description %>
-    </p>
-
+    </address>
     <%= link_to 'Edit', edit_husky_breeder_path(@husky_breeder) %> |
     <%= link_to 'Back', husky_breeders_path %>
+    <address>
+  <strong><%= @husky_breeder.name %></strong><br>
+  <abbr title="Phone"><span class="glyphicon glyphicon-earphone"></abbr> <%= @husky_breeder.phone %>
+</address>
+<address>
+      <%= @husky_breeder.website %>
+</address>
+<address>
+  <a href="mailto:#"><span class="glyphicon glyphicon-envelope"></span> <%= @husky_breeder.email %></a>
+</address>
+    
   </div>
+
 </div>
