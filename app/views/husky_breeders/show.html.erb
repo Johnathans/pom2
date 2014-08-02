@@ -27,7 +27,7 @@
 <address>
   <a href="mailto:#"><span class="glyphicon glyphicon-envelope"></span> <%= @husky_breeder.email %></a>
 </address>
-    
+    <%= link_to 'Delete', @husky_breeder, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
   </div>
 
 </div>
