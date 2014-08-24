@@ -1,0 +1,41 @@
+<%= form_for @pomeranian_breeder, html: { multipart: true } do |f| %>
+  <% if @pomeranian_breeder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pomeranian_breeder.errors.count, "error") %> prohibited this pomeranian_breeder from being saved:</h2>
+
+      <ul>
+      <% @pomeranian_breeder.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+    <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

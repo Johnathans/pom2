@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :pins
   has_many :husky_breeders
+  has_many :pomeranian_breeders
+  has_many :pomsky_breeders
 
   validates :name, presence: true
 end

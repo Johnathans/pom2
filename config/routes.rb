@@ -1,4 +1,8 @@
 Pom2::Application.routes.draw do
+  resources :pomsky_breeders
+
+  resources :pomeranian_breeders
+
   resources :husky_breeders
 
   resources :pins
@@ -6,7 +10,6 @@ Pom2::Application.routes.draw do
   devise_for :users
   get "about" => "pages#about"
   get "breeder_listing" => "pages#breeder_listing"
-  get "pomsky_breeders" => "pages#pomsky_breeders"
   get "pomsky_puppies_for_sale" => "pages#pomsky_puppies_for_sale"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

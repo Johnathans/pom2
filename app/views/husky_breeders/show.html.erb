@@ -1,34 +1,20 @@
-<title>Husky Breeder | <%= @husky_breeder.name %></title>
-<div class="container">
-  <div class="jumbotron">
-    <ul class="breadcrumb">
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Husky Breeders", husky_breeders_path %></li>
-    </ul>
-    <p id="notice"><%= notice %></p>
+<title><%= @husky_breeder.name %></title>
+<p id="notice"><%= notice %></p>
 
-    <p>
-      <strong>Breeder Name:</strong>
-      <%= @husky_breeder.name %>
-    </p>
-    <%= image_tag @husky_breeder.image.url(:medium) %>
-    <address>
-      <strong>About the Breeder:</strong>
-      <%= @husky_breeder.description %>
-    </address>
-    <%= link_to 'Edit', edit_husky_breeder_path(@husky_breeder) %> |
-    <%= link_to 'Back', husky_breeders_path %>
-    <address>
-  <strong><%= @husky_breeder.name %></strong><br>
-  <abbr title="Phone"><span class="glyphicon glyphicon-earphone"></abbr> <%= @husky_breeder.phone %>
-</address>
-<address>
-      <%= @husky_breeder.website %>
-</address>
-<address>
-  <a href="mailto:#"><span class="glyphicon glyphicon-envelope"></span> <%= @husky_breeder.email %></a>
-</address>
-    <%= link_to 'Delete', @husky_breeder, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <%= image_tag @husky_breeder.image.url %>
+    </div>
   </div>
-
+  <div class="col-md-6">
+    <h3><%= @husky_breeder.name %></h3>
+    <p><%= @husky_breeder.description %></p>
+    <p><%= @husky_breeder.website %></p>
+    <p><%= @husky_breeder.phone %></p>
+    <p><%= @husky_breeder.email %></p>
+  </div>
 </div>
+
+<%= link_to 'Edit', edit_husky_breeder_path(@husky_breeder), class: "btn btn-link" %>
+<%= link_to 'Back', husky_breeders_path, class: "btn btn-link" %>
