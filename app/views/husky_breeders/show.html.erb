@@ -15,6 +15,7 @@
   </div>
 </div>
 
-
+<% if @husky_breeder.user == current_user %>
 <%= link_to 'Edit', edit_husky_breeder_path(@husky_breeder), class: "btn btn-link" %>
+<% end %>
 <%= link_to 'Back', husky_breeders_path, class: "btn btn-link" %>

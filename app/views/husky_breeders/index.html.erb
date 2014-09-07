@@ -21,4 +21,6 @@
 
 <br>
 
-<%= link_to "New Listing", new_husky_breeder_path, class: "btn btn-link" %>
+<% if user_signed_in? %>
+  <%= link_to 'New Husky Breeder', new_husky_breeder_path %>
+<% end %>

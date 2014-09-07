@@ -39,4 +39,7 @@ The above bullet points are just few things that we have seen affect those hopin
 
 <br>
 
-<%= link_to "New Listing", new_pomsky_breeder_path, class: "btn btn-link" %>
+<% if user_signed_in? %>
+  <%= link_to "New Listing", new_pomsky_breeder_path, class: "btn btn-link" %>
+<% end %>
+

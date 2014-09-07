@@ -21,4 +21,6 @@
 
 <br>
 
-<%= link_to "New Listing", new_pomeranian_breeder_path, class: "btn btn-link" %>
+<% if user_signed_in? %>
+  <%= link_to 'New Pomeranian Breeder', new_pomeranian_breeder_path %>
+<% end %>

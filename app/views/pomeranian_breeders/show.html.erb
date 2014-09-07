@@ -16,5 +16,7 @@
   </div>
 </div>
 
+<% if @pomeranian_breeder.user == current_user %>
 <%= link_to 'Edit', edit_pomeranian_breeder_path(@pomeranian_breeder), class: "btn btn-link" %>
+<% end %>
 <%= link_to 'Back', pomeranian_breeders_path, class: "btn btn-link" %>

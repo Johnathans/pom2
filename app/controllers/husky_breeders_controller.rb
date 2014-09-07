@@ -1,5 +1,7 @@
 class HuskyBreedersController < ApplicationController
   before_action :set_husky_breeder, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /husky_breeders
   # GET /husky_breeders.json
@@ -14,7 +16,7 @@ class HuskyBreedersController < ApplicationController
 
   # GET /husky_breeders/new
   def new
-    @husky_breeder = HuskyBreeder.new
+    @husky_breeder = current_user.HuskyBreeders.build
   end
 
   # GET /husky_breeders/1/edit
@@ -24,7 +26,7 @@ class HuskyBreedersController < ApplicationController
   # POST /husky_breeders
   # POST /husky_breeders.json
   def create
-    @husky_breeder = HuskyBreeder.new(husky_breeder_params)
+    @husky_breeder = current_user.HuskyBreeders.build(husky_breeder_params)
 
     respond_to do |format|
       if @husky_breeder.save

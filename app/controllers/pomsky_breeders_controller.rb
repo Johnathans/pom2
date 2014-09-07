@@ -1,5 +1,7 @@
 class PomskyBreedersController < ApplicationController
   before_action :set_pomsky_breeder, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /pomsky_breeders
   # GET /pomsky_breeders.json
@@ -14,7 +16,7 @@ class PomskyBreedersController < ApplicationController
 
   # GET /pomsky_breeders/new
   def new
-    @pomsky_breeder = PomskyBreeder.new
+    @pomsky_breeder = current_user.PomskyBreeders.build
   end
 
   # GET /pomsky_breeders/1/edit
@@ -24,7 +26,7 @@ class PomskyBreedersController < ApplicationController
   # POST /pomsky_breeders
   # POST /pomsky_breeders.json
   def create
-    @pomsky_breeder = PomskyBreeder.new(pomsky_breeder_params)
+    @pomsky_breeder = current_user.PomskyBreeders.build(pomsky_breeder_params)
 
     respond_to do |format|
       if @pomsky_breeder.save

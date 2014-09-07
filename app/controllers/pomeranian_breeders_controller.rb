@@ -1,5 +1,7 @@
 class PomeranianBreedersController < ApplicationController
   before_action :set_pomeranian_breeder, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /pomeranian_breeders
   # GET /pomeranian_breeders.json
@@ -14,7 +16,7 @@ class PomeranianBreedersController < ApplicationController
 
   # GET /pomeranian_breeders/new
   def new
-    @pomeranian_breeder = PomeranianBreeder.new
+    @pomeranian_breeder = current_user.PomeranianBreeders.build
   end
 
   # GET /pomeranian_breeders/1/edit
@@ -24,7 +26,7 @@ class PomeranianBreedersController < ApplicationController
   # POST /pomeranian_breeders
   # POST /pomeranian_breeders.json
   def create
-    @pomeranian_breeder = PomeranianBreeder.new(pomeranian_breeder_params)
+    @pomeranian_breeder = current_user.PomeranianBreeders.build(pomeranian_breeder_params)
 
     respond_to do |format|
       if @pomeranian_breeder.save
