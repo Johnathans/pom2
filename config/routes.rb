@@ -1,4 +1,4 @@
-Pom2::Application.routes.draw do
+Pom2::Application.routes.draw do  
   resources :pomsky_breeders
 
   resources :pomeranian_breeders
@@ -6,6 +6,7 @@ Pom2::Application.routes.draw do
   resources :husky_breeders
 
   resources :pins
+  resources :sitemap, only: [:index]
 
   devise_for :users
   get "about" => "pages#about"

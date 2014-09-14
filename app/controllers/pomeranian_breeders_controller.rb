@@ -5,8 +5,8 @@ class PomeranianBreedersController < ApplicationController
 
   # GET /pomeranian_breeders
   # GET /pomeranian_breeders.json
- def index
-     @pomeranian_breeders = PomeranianBreeder.all
+  def index
+     @pomeranian_breeders = PomeranianBreeder.all.order("created_at DESC")
   end
 
   def show

@@ -6,7 +6,7 @@ class HuskyBreedersController < ApplicationController
   # GET /husky_breeders
   # GET /husky_breeders.json
   def index
-     @husky_breeders = HuskyBreeder.all
+     @husky_breeders = HuskyBreeder.all.order("created_at DESC")
   end
 
   def show
