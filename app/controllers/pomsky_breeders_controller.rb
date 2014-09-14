@@ -6,61 +6,39 @@ class PomskyBreedersController < ApplicationController
   # GET /pomsky_breeders
   # GET /pomsky_breeders.json
   def index
-    @pomsky_breeders = PomskyBreeder.all
+     @pomsky_breeders = PomskyBreeder.all
   end
 
-  # GET /pomsky_breeders/1
-  # GET /pomsky_breeders/1.json
   def show
   end
 
-  # GET /pomsky_breeders/new
   def new
-    @pomsky_breeder = current_user.PomskyBreeders.build
+    @pomsky_breeder = current_user.pomsky_breeders.build
   end
 
-  # GET /pomsky_breeders/1/edit
   def edit
   end
 
-  # POST /pomsky_breeders
-  # POST /pomsky_breeders.json
   def create
-    @pomsky_breeder = current_user.PomskyBreeders.build(pomsky_breeder_params)
-
-    respond_to do |format|
-      if @pomsky_breeder.save
-        format.html { redirect_to @pomsky_breeder, notice: 'Pomsky breeder was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @pomsky_breeder }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @pomsky_breeder.errors, status: :unprocessable_entity }
-      end
+    @pomsky_breeder = current_user.pomsky_breeders.build(pomsky_breeder_params)
+    if @pomsky_breeder.save
+      redirect_to pomsky_breeders_path, notice: 'Breeder was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
-  # PATCH/PUT /pomsky_breeders/1
-  # PATCH/PUT /pomsky_breeders/1.json
   def update
-    respond_to do |format|
-      if @pomsky_breeder.update(pomsky_breeder_params)
-        format.html { redirect_to @pomsky_breeder, notice: 'Pomsky breeder was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @pomsky_breeder.errors, status: :unprocessable_entity }
-      end
+    if @pomsky_breeder.update(pomsky_breeder_params)
+      redirect_to @pomsky_breeder, notice: 'Breeder was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
-  # DELETE /pomsky_breeders/1
-  # DELETE /pomsky_breeders/1.json
   def destroy
     @pomsky_breeder.destroy
-    respond_to do |format|
-      format.html { redirect_to pomsky_breeders_url }
-      format.json { head :no_content }
-    end
+    redirect_to pomsky_breeders_url
   end
 
   private
@@ -68,6 +46,11 @@ class PomskyBreedersController < ApplicationController
     def set_pomsky_breeder
       @pomsky_breeder = PomskyBreeder.find(params[:id])
     end
+
+    def correct_user
+      @pomsky_breeder = current_user.pomsky_breeders.find_by(id: params[:id])
+      redirect_to pomsky_breeders_path, notice: "Not authorized to edit this listing" if @pomsky_breeder.nil?
+    end 
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pomsky_breeder_params

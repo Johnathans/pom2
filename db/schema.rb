@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140824042056) do
+ActiveRecord::Schema.define(version: 20140913234954) do
 
   create_table "husky_breeders", force: true do |t|
     t.string   "name"
@@ -55,7 +55,10 @@ ActiveRecord::Schema.define(version: 20140824042056) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "pomeranian_breeders", ["user_id"], name: "index_pomeranian_breeders_on_user_id"
 
   create_table "pomsky_breeders", force: true do |t|
     t.string   "name"
@@ -69,7 +72,10 @@ ActiveRecord::Schema.define(version: 20140824042056) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "pomsky_breeders", ["user_id"], name: "index_pomsky_breeders_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
