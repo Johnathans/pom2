@@ -16,4 +16,7 @@ class PagesController < ApplicationController
 
   def pomeranian_breeders
   end
+
+  def articles
+  end
 end
