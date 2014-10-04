@@ -78,3 +78,14 @@ body {
   .jumbotron {
     background-color: white;
   }
+
+.fb_iframe_widget {
+display: inline-block;
+position: absolute;
+top: 14px;
+margin: 0 0 0 140px;
+}
+
+@media only screen and (max-device-width: 768px){
+  display:none;
+}
