@@ -25,4 +25,7 @@ class PagesController < ApplicationController
 
   def grapes
   end
+
+  def worms
+  end
 end
