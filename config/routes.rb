@@ -10,6 +10,8 @@ Pom2::Application.routes.draw do
 
   devise_for :users
   get "about" => "pages#about"
+  get "grapes" => "pages#grapes"
+  get "teacup" => "pages#teacup"
   get "breeder_listing" => "pages#breeder_listing"
   get "pomsky_puppies_for_sale" => "pages#pomsky_puppies_for_sale"
   get "articles" => "pages#articles"

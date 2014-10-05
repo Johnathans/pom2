@@ -19,4 +19,10 @@ class PagesController < ApplicationController
 
   def articles
   end
+
+  def teacup
+  end
+
+  def grapes
+  end
 end
