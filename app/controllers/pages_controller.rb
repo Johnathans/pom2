@@ -28,4 +28,7 @@ class PagesController < ApplicationController
 
   def worms
   end
+
+  def nutella
+  end
 end

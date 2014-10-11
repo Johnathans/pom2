@@ -9,6 +9,7 @@ Pom2::Application.routes.draw do
   resources :sitemap, only: [:index]
 
   devise_for :users
+  get "nutella" => "pages#nutella"
   get "about" => "pages#about"
    get "worms" => "pages#worms"
   get "grapes" => "pages#grapes"
